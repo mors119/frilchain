@@ -1,0 +1,53 @@
+name: Indexer CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "apps/indexer/**"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/indexer/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  indexer:
+    name: Build and Validate Indexer
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        working-directory: apps/indexer
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Restore Rust Cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Check Formatting
+        run: cargo fmt --all -- --check
+
+      - name: Run Clippy
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Run Tests
+        run: cargo test
+
+      - name: Build Indexer
+        run: cargo build
