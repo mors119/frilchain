@@ -1,0 +1,124 @@
+### Default
+
+* text=auto eol=lf
+
+### Shell
+
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+
+### Windows
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+### Gradle
+
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+
+### Java
+
+*.java text
+*.kt text
+*.kts text
+*.properties text
+
+### Rust
+
+*.rs text
+Cargo.toml text
+Cargo.lock text
+
+### TypeScript / JavaScript
+
+*.ts text
+*.tsx text
+*.js text
+*.jsx text
+
+### Web
+
+*.html text
+*.css text
+*.scss text
+
+### Configuration
+
+*.json text
+*.xml text
+*.toml text
+*.yml text
+*.yaml text
+
+### SQL
+
+*.sql text
+
+### Documentation
+
+*.md text
+
+### GitHub
+
+.github/** text eol=lf
+
+### VSCode
+
+.vscode/** text eol=lf
+
+### Docker
+
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+
+### Nginx
+
+*.conf text eol=lf
+
+### Archives
+
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+
+### Java Artifacts
+
+*.jar binary
+*.war binary
+*.ear binary
+
+### Images
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+
+### SVG
+
+*.svg text
+
+### Fonts
+
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+### Certificates
+
+*.p12 binary
+*.jks binary
+*.keystore binary
+
+### Database Dumps
+
+*.dump binary
+*.backup binary

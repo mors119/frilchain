@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "apps/indexer"
+]
+
+resolver = "3"

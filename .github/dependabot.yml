@@ -1,0 +1,61 @@
+version: 2
+
+updates:
+  # Rust
+  - package-ecosystem: cargo
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    groups:
+      rust-dependencies:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "deps(rust)"
+    labels:
+      - "dependencies"
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "deps(ci)"
+    labels:
+      - "dependencies"
+
+  # Next.js / Bun
+  - package-ecosystem: npm
+    directory: "/apps/web"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    groups:
+      node-dependencies:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "deps(web)"
+    labels:
+      - "dependencies"
+
+  # Spring Boot
+  - package-ecosystem: gradle
+    directory: "/apps/api"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    groups:
+      gradle-dependencies:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "deps(api)"
+    labels:
+      - "dependencies"
