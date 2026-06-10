@@ -10,8 +10,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "apps/indexer/**"
 
 permissions:
   contents: read
